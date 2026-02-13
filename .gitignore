@@ -44,3 +44,8 @@ logs/
 ### OS ###
 .DS_Store
 Thumbs.db
+
+### Documentation (exclude from main branch) ###
+# Keep README.md in main, but exclude other .md files
+*.md
+!README.md
