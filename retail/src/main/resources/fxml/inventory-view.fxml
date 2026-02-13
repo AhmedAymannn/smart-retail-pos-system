@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane nodeOrientation="RIGHT_TO_LEFT" prefHeight="600.0" prefWidth="1000.0"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.smartpos.retail.controllers.InventoryController">
+    
+    <top>
+        <VBox spacing="10" style="-fx-background-color: #34495e; -fx-padding: 15;">
+            <Label text="إدارة المخزون" textFill="WHITE">
+                <font><Font name="System Bold" size="24.0" /></font>
+            </Label>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <TextField fx:id="searchField" prefWidth="300.0" promptText="بحث عن منتج..." />
+                <Button fx:id="searchButton" text="بحث" onAction="#handleSearch" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="addProductButton" text="إضافة منتج جديد" onAction="#handleAddProduct" 
+                        style="-fx-background-color: #27ae60; -fx-text-fill: white;" />
+            </HBox>
+        </VBox>
+    </top>
+    
+    <center>
+        <VBox spacing="10" style="-fx-padding: 15;">
+            <TableView fx:id="productsTable" prefHeight="450.0">
+                <columns>
+                    <TableColumn fx:id="nameColumn" text="اسم المنتج" prefWidth="200.0" />
+                    <TableColumn fx:id="barcodeColumn" text="الباركود" prefWidth="150.0" />
+                    <TableColumn fx:id="priceColumn" text="السعر" prefWidth="100.0" />
+                    <TableColumn fx:id="stockColumn" text="المخزون" prefWidth="100.0" />
+                    <TableColumn fx:id="actionsColumn" text="الإجراءات" prefWidth="200.0" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+    
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-background-color: #34495e; -fx-padding: 10;">
+            <Label fx:id="statusLabel" text="جاهز" textFill="#2ecc71" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="رجوع" onAction="#handleBack" />
+        </HBox>
+    </bottom>
+</BorderPane>

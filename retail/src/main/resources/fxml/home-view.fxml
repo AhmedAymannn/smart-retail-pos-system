@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="20" style="-fx-background-color: #ecf0f1; -fx-padding: 40;"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <Label text="مرحباً بك في نظام نقاط البيع الذكي" textFill="#2c3e50">
+        <font><Font name="System Bold" size="32.0" /></font>
+    </Label>
+    <Separator prefWidth="400.0" />
+    <Label text="اختر وحدة من الشريط الجانبي للبدء" textFill="#7f8c8d">
+        <font><Font size="16.0" /></font>
+    </Label>
+</VBox>

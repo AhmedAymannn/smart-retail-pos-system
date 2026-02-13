@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="20" style="-fx-background-color: #ecf0f1; -fx-padding: 40;"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.smartpos.retail.controllers.LoginController">
+    
+    <Label text="نظام نقاط البيع الذكية" textFill="#2c3e50">
+        <font><Font name="System Bold" size="32.0" /></font>
+    </Label>
+    
+    <Label text="تسجيل الدخول" textFill="#34495e">
+        <font><Font name="System Bold" size="24.0" /></font>
+    </Label>
+    
+    <Separator prefWidth="300.0" />
+    
+    <VBox spacing="15" alignment="CENTER" style="-fx-background-color: white; -fx-padding: 30; -fx-border-color: #bdc3c7; -fx-border-width: 1; -fx-border-radius: 5;">
+        <VBox spacing="10">
+            <Label text="اسم المستخدم:" textFill="#34495e">
+                <font><Font size="14.0" /></font>
+            </Label>
+            <TextField fx:id="usernameField" prefWidth="250.0" promptText="أدخل اسم المستخدم" />
+        </VBox>
+        
+        <VBox spacing="10">
+            <Label text="كلمة المرور:" textFill="#34495e">
+                <font><Font size="14.0" /></font>
+            </Label>
+            <PasswordField fx:id="passwordField" prefWidth="250.0" promptText="أدخل كلمة المرور" />
+        </VBox>
+        
+        <Label fx:id="errorLabel" textFill="#e74c3c" visible="false" wrapText="true" prefWidth="250.0">
+            <font><Font size="12.0" /></font>
+        </Label>
+        
+        <Button fx:id="loginButton" text="تسجيل الدخول" onAction="#handleLogin" 
+                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-pref-width: 250; -fx-pref-height: 40;">
+            <font><Font name="System Bold" size="14.0" /></font>
+        </Button>
+    </VBox>
+    
+    <VBox spacing="5" alignment="CENTER">
+        <Label text="مستخدمين تجريبيين:" textFill="#7f8c8d">
+            <font><Font size="12.0" /></font>
+        </Label>
+        <Label text="مدير: admin / admin123" textFill="#7f8c8d">
+            <font><Font size="11.0" /></font>
+        </Label>
+        <Label text="كاشير: cashier / cashier123" textFill="#7f8c8d">
+            <font><Font size="11.0" /></font>
+        </Label>
+    </VBox>
+</VBox>

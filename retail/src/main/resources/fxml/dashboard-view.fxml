@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="20" style="-fx-padding: 20; -fx-background-color: #ecf0f1;"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.smartpos.retail.controllers.DashboardController">
+    
+    <Label text="لوحة التحكم" textFill="#2c3e50">
+        <font><Font name="System Bold" size="28.0" /></font>
+    </Label>
+    
+    <Separator />
+    
+    <!-- Statistics Cards -->
+    <GridPane hgap="15" vgap="15">
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" />
+            <ColumnConstraints hgrow="ALWAYS" />
+            <ColumnConstraints hgrow="ALWAYS" />
+            <ColumnConstraints hgrow="ALWAYS" />
+        </columnConstraints>
+        
+        <!-- Total Products Card -->
+        <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-border-color: #bdc3c7; -fx-border-width: 1; -fx-border-radius: 5;"
+              GridPane.columnIndex="0">
+            <Label text="إجمالي المنتجات" textFill="#7f8c8d">
+                <font><Font size="14.0" /></font>
+            </Label>
+            <Label fx:id="totalProductsLabel" text="0" textFill="#3498db">
+                <font><Font name="System Bold" size="32.0" /></font>
+            </Label>
+        </VBox>
+        
+        <!-- Total Stock Value Card -->
+        <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-border-color: #bdc3c7; -fx-border-width: 1; -fx-border-radius: 5;"
+              GridPane.columnIndex="1">
+            <Label text="قيمة المخزون الإجمالية" textFill="#7f8c8d">
+                <font><Font size="14.0" /></font>
+            </Label>
+            <Label fx:id="totalStockValueLabel" text="0.00 ر.س" textFill="#27ae60">
+                <font><Font name="System Bold" size="32.0" /></font>
+            </Label>
+        </VBox>
+        
+        <!-- Low Stock Products Card -->
+        <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-border-color: #bdc3c7; -fx-border-width: 1; -fx-border-radius: 5;"
+              GridPane.columnIndex="2">
+            <Label text="منتجات قليلة المخزون" textFill="#7f8c8d">
+                <font><Font size="14.0" /></font>
+            </Label>
+            <Label fx:id="lowStockLabel" text="0" textFill="#e74c3c">
+                <font><Font name="System Bold" size="32.0" /></font>
+            </Label>
+        </VBox>
+        
+        <!-- Average Price Card -->
+        <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-border-color: #bdc3c7; -fx-border-width: 1; -fx-border-radius: 5;"
+              GridPane.columnIndex="3">
+            <Label text="متوسط السعر" textFill="#7f8c8d">
+                <font><Font size="14.0" /></font>
+            </Label>
+            <Label fx:id="averagePriceLabel" text="0.00 ر.س" textFill="#9b59b6">
+                <font><Font name="System Bold" size="32.0" /></font>
+            </Label>
+        </VBox>
+    </GridPane>
+    
+    <!-- Low Stock Products Table -->
+    <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-border-color: #bdc3c7; -fx-border-width: 1;">
+        <Label text="منتجات قليلة المخزون (أقل من 50)" textFill="#2c3e50">
+            <font><Font name="System Bold" size="18.0" /></font>
+        </Label>
+        <TableView fx:id="lowStockTable" prefHeight="200.0">
+            <columns>
+                <TableColumn fx:id="lowStockNameColumn" text="اسم المنتج" prefWidth="200.0" />
+                <TableColumn fx:id="lowStockBarcodeColumn" text="الباركود" prefWidth="150.0" />
+                <TableColumn fx:id="lowStockPriceColumn" text="السعر" prefWidth="100.0" />
+                <TableColumn fx:id="lowStockStockColumn" text="المخزون" prefWidth="100.0" />
+            </columns>
+        </TableView>
+    </VBox>
+    
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="تحديث" onAction="#handleRefresh" 
+                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-pref-width: 150;" />
+        <Button text="رجوع" onAction="#handleBack" 
+                style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-pref-width: 150;" />
+    </HBox>
+</VBox>
